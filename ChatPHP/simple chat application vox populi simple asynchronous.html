@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>	Vox Populi simple </title>
+        
+        <!-- Link naar css style bestand -->
+        <link type="text/css" rel="stylesheet" href="simple chat application Vox Populi simple.css" />
+	    <meta charset="utf-8">
+          
+        <script> 
+         
+        <!-- globals -->       
+        var mykey = "voxpopuli"   
+        var minimumid = 2282;
+        
+         <!-- stuur input naar server -->
+         function submitmessage() {
+            var xhr = new XMLHttpRequest();  
+            var username = document.chatareas.username.value;
+            var value = document.chatareas.username.value + ": " + document.chatareas.inputtext.value;
+            var url = 'http://localhost/ChatPHP/test_rest_api_2.php?value='+value;
+            xhr.open('POST', url , true); 
+            xhr.onload = function (e) {
+              if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                  console.log(xhr.responseText);
+                } else {
+                  console.error(xhr.statusText);
+                }
+              }
+            };
+            xhr.onerror = function (e) {
+              console.error(xhr.statusText);
+            };
+             xhr.send(null); 
+            // get message back from server with id number   
+            //xhr.send();
+            //document.chatareas.outputtext.value += "    " +    
+            //"ID:" + " " + 
+            //+  xhr.response + " ";       
+            //getmessage(xhr.response);
+            }   
+            
+         <!-- Ontvang input van server (eigen bericht en id) --> 
+         <!-- & Stuur input server naar output scherm -->
+         function getmessages() {
+            var xhr = new XMLHttpRequest();  
+            var url = 'http://localhost/ChatPHP/test_rest_api_2.php?mykey='+mykey+'&minimumid='+minimumid;
+            xhr.open('GET', url , true); 
+            xhr.onload = function (e) {
+              if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                  alert(xhr.response);
+                  document.chatareas.outputtext.value += "    " +
+                  xhr.response;  
+                  console.log(xhr.responseText);
+                } else {
+                  console.error(xhr.statusText);
+                }
+              }
+            };
+            xhr.onerror = function (e) {
+              console.error(xhr.statusText);
+            };
+            xhr.send(null);  
+            //xhr.responseType = 'text';
+            //xhr.onload = function () {
+            //if (xhr.readyState === xhr.DONE) {
+            //if (xhr.status === 200) {
+            }  
+            
+                        
+        </script>     
+     </head>
+    
+      <!-- Layout chatbox -->
+    <div id="border">
+        <div id="menu">
+            
+            <!-- Naam en motto app -->
+            <p class="welcome"> <b> Vox Populi simple: your simple chat-tsunami in the clouds </b></p>
+            <div style="clear:both"></div>
+        </div>
+            
+            <!-- Knoppen voor de Chatbox -->
+            <form name="chatareas" action="">
+            
+             <!-- Chatbox zelf -->
+            <textarea name="outputtext" cols="60" rows="10">
+            Welcome to the Vox Populi chatbox!
+            </textarea> 
+            <br> 
+            <br>
+    
+            <!-- Username tekstvak -->
+            Username:
+            <input type="text" name="username" id="username">    
+            <br>
+            <br>
+                
+            <!-- chat bericht tekstvak -->
+            <textarea name= "inputtext" cols="50" rows="3">
+            Type your message here!
+            </textarea>
+            
+            <!-- Verstuur knoppen -->
+            <input name="submitmsg" type="button" onClick="submitmessage();" id="submitmsg" value="Send to the world" />
+            <input name="getnewmsg" type="button" onClick="getmessages();" id="getnewmsg" value="Get messages" />           
+                
+            </form>
+    </div>
+    
+   	<body background="achtergrond.jpg">      
+    <script>
+    </script>   
+    </body>
+
+</html>
