@@ -18,29 +18,22 @@
          function submitmessage() {
             var xhr = new XMLHttpRequest();  
             var username = document.chatareas.username.value;
-            var value = document.chatareas.username.value + ": " + document.chatareas.inputtext.value;
-            var url = 'http://localhost/ChatPHP/test_rest_api_2.php?value='+value;
-            xhr.open('POST', url , true); 
-            xhr.onload = function (e) {
-              if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                  console.log(xhr.responseText);
-                } else {
-                  console.error(xhr.statusText);
-                }
-              }
-            };
-            xhr.onerror = function (e) {
-              console.error(xhr.statusText);
-            };
-             xhr.send(null); 
+            var value = "username=" + document.chatareas.username.value + "&message=" + document.chatareas.inputtext.value;
+            xhr.open('POST', "http://localhost/ChatPHP/test_rest_api_2.php", true); 
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');  
+            xhr.send(value);    
+         }
+            //xhr.onerror = function (e) {
+            //  console.error(xhr.statusText);
+            //};
+            // xhr.send(null); 
             // get message back from server with id number   
             //xhr.send();
             //document.chatareas.outputtext.value += "    " +    
             //"ID:" + " " + 
             //+  xhr.response + " ";       
             //getmessage(xhr.response);
-            }   
+            //}   
             
          <!-- Ontvang input van server (eigen bericht en id) --> 
          <!-- & Stuur input server naar output scherm -->
@@ -51,7 +44,7 @@
             xhr.onload = function (e) {
               if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                  alert(xhr.response);
+                  //alert(xhr.response);
                   document.chatareas.outputtext.value += "    " +
                   xhr.response;  
                   console.log(xhr.responseText);
