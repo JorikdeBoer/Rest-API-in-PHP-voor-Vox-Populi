@@ -19,7 +19,7 @@
             var xhr = new XMLHttpRequest();  
             var username = document.chatareas.username.value;
             var value = "username=" + document.chatareas.username.value + "&message=" + document.chatareas.inputtext.value;
-            xhr.open('POST', "http://localhost/ChatPHP/test_rest_api_2.php", true); 
+            xhr.open('PUT', "http://localhost/ChatPHP/test_rest_api_2.php", true); 
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');  
             xhr.send(value);    
          }
@@ -45,7 +45,7 @@
               if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                   //alert(xhr.response);
-                  document.chatareas.outputtext.value += "    " +
+                  document.chatareas.outputtext.value = "    " +
                   xhr.response;  
                   console.log(xhr.responseText);
                 } else {

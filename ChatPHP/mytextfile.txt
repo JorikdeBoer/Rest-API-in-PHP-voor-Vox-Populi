@@ -1,4 +1,12 @@
+The username = STARTBERICHT
+The message = Het eerste bericht van de chat!
+            
+
+The username = Jan
+The message = Hello there!
+            
+
 The username = Joris
-The message = hallo
+The message = Ook hallo vanaf hier
             
 
