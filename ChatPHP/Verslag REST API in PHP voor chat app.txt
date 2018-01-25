@@ -22,3 +22,8 @@ Op dezelfde dag heb ik ook gewerkt en advies gevraagd over problemen in de commu
 programmeerfoutjes opgelost.
 
 Donderdagochtend kreeg ik meer inzicht in de problemen met de beoogde POST/PUT functie, die meer complexiteit nodig had om de data te lezen.
+Het lukte gedurende de dag om via een POST functie de chat message naar een textfile te sturen en die op zijn beurt op het scherm te laten zien. 
+Later werd het ook mogelijk om de chat na een nieuwe bericht weer te refreshen. Op donderdag had ik voor vrijdag als planning om de chat aplicatie 
+en de PHP API aan te passen aan het REST protocol, het mogelijk te maken om aan de hand van een meegeprinte id in de tekstfile om berichten vanaf
+een bepaald nummer op te roepen en om het eigen swagger API document te voltooien.
+
