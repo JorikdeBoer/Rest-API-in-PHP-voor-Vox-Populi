@@ -1,0 +1,24 @@
+Planning, Reflectie, Opbouw, Doelen & Verslag 
+REST API in PHP voor versimpelde Vox Populi chat applicatie
+
+Maandag en dinsdag ingelezen in opdracht en de bijbehorende onderwerpen:
+ingelezen in REST, PHP API, databases, REST protocol, RESTfull, swagger, etc.
+Op dinsdagmiddag begon de opdracht in zijn geheel duidelijk te worden en kon ik de doelen voor de minimale versie (bij)stellen.
+Het gebruiken van een database komt eerst op een tweede spoor, een "werkende" API is de eerste prioriteit. 
+Op dinsdagmiddag werden ook besluiten genomen over het gezamenlijke REST protocol wat hopelijk het best werkt voor iedereen.
+
+Het doel voor de eerste versie:
+	1. een versimpelde chat app gerecycled van de opdracht van vorige week met enkel een "submit" en "get message" functie
+	om de api te testen op compatibiliteit met de front end chat applicaties.
+	2. een API in PHP die met GET & PUT request enkel een vaste tekst teruggeeft in de chatbox
+	3. documentatie van de API in Swagger op basis van het gezamenlijk opgestelde REST protocol
+	4. verslag van de planning, opbouw, doelen, reflectie etc. (in de vorm van dit document op basis van kladbriefjes en mijn dagboek
+	(helaas niet geschikt om in te zien)
+
+Woensdag had als eindpunt een versie van het programma waarbij de GET functie de "minimumid" en de "mykey" teruggeeft 
+naar het chatbox scherm van de gebruiker. De POST functie geeft enkel nog een error omdat de value nog niet als parameter kan worden gelezen.
+Op dezelfde dag heb ik ook gewerkt en advies gevraagd over problemen in de communicatie tussen de frontend en backend op het gebied van 
+"Access-Control-Allow-Origin", waar een oplossing lang uitbleef. Ook heb ik mij verdiept in de localhost server zelf en kleinigheden als een missende "favicon" en andere kleine 
+programmeerfoutjes opgelost.
+
+Donderdagochtend kreeg ik meer inzicht in de problemen met de beoogde POST/PUT functie, die meer complexiteit nodig had om de data te lezen.
