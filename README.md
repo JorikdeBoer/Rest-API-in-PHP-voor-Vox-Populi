@@ -11,4 +11,7 @@ https://app.swaggerhub.com/apis/RJK-Gorilla/GorillaChat1/1.0.0#/
 Een online demo is te vinden op de site http://wijzijncodegorilla.nl/jorik/VoxPopulichat/
 Een verslag van de opdracht week en de bijbehorende planning/werkwijze/etc. is te vinden in het bestand "Verslag REST API in PHP voor chat app" in de map ChatPHP.
 
+[Alt text](https://github.com/JorikdeBoer/Rest-API-in-PHP-voor-Vox-Populi/blob/master/VoxPopuliSimple.png?raw=true "Vox Populi")
+
+
 
