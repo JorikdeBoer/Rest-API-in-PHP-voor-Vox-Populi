@@ -1,6 +1,7 @@
 <?php
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Methods: *");
+
     $verb = $_SERVER['REQUEST_METHOD'];
 
     // code om met GET (nieuwe) berichten te krijgen (met de parameters "minimumid" & mykey") 
@@ -8,7 +9,6 @@
         
         // controle om te checken of de input "mykey" bestaat
         if (isset( $_GET["mykey"] )){
-            //|| $_GET["minimumid"]
             echo "The users mykey = " .$_GET["mykey"]. "\n";
             echo "The minimum id = " .$_GET["minimumid"]. "\n";
             
@@ -19,7 +19,12 @@
             fwrite($mydatafile, $txt);
             fclose($mydatafile);
             $mytextfile=fopen("mytextfile.txt", "r") or die("Unable to open file!");
-            echo fread($mytextfile,filesize("mytextfile.txt"));
+            $lines = file("mytextfile.txt"); //file in to an array
+            //echo $minimumid = $_GET["minimumid"];
+            for ($i=($_GET["minimumid"]-1)*6; $i<count($lines); $i++) {
+            //echo $i;    
+            echo $lines[$i];} 
+            //echo fread($mytextfile,filesize("mytextfile.txt"));
             fclose($mytextfile);
         }
         // error wanneer "mykey" niet meegegeven wordt
@@ -29,7 +34,6 @@
     }
 
     // code om met PUT een bericht te maken (met de parameter body, inclusief "id", "mykey" en "value")
-    //WORK in PROGRESS
     elseif ($verb == 'PUT'){
         
             /* PUT data comes in on the stdin stream */
@@ -39,7 +43,7 @@
             // De oude chatmessages worden bewaard voor nieuwe file
             $old_content = file_get_contents($mytextfile);
             // De nieuwe content wordt uitgeschreven
-            $new_content = "The username = " .$post_vars['username']. "\nThe message = " .$post_vars['message']. "\n";
+            $new_content = "Id = " .$post_vars['idnumber']. "\nThe chatname = " .$post_vars['mykey']. "\nThe message = " .$post_vars['value']. "\n" .PHP_EOL;
             // Alles wordt teruggezet in de tekstfile
             fwrite($mytextfile, $new_content."\n".$old_content);
             fclose($mytextfile);
@@ -60,10 +64,4 @@
             //fwrite($myfile, $txt);
             //fclose($myfile);          
     }
-        
-        // error wanneer "value" niet meegegeven wordt
-        //else {
-        //    die("Error: the required parameters are missing.");    
-        //}
-    //}
 ?>

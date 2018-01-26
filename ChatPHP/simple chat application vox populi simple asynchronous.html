@@ -12,28 +12,20 @@
          
         <!-- globals -->       
         var mykey = "voxpopuli"   
-        var minimumid = 2282;
+        var minimumid = 2;
+        var originalid = 1;    
         
          <!-- stuur input naar server -->
          function submitmessage() {
             var xhr = new XMLHttpRequest();  
             var username = document.chatareas.username.value;
-            var value = "username=" + document.chatareas.username.value + "&message=" + document.chatareas.inputtext.value;
+            var message = document.chatareas.username.value + ": " + document.chatareas.inputtext.value;
+            var value = "mykey=" +mykey+ "&value=" +message+ "&idnumber=" + originalid;
             xhr.open('PUT', "http://localhost/ChatPHP/test_rest_api_2.php", true); 
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');  
-            xhr.send(value);    
-         }
-            //xhr.onerror = function (e) {
-            //  console.error(xhr.statusText);
-            //};
-            // xhr.send(null); 
-            // get message back from server with id number   
-            //xhr.send();
-            //document.chatareas.outputtext.value += "    " +    
-            //"ID:" + " " + 
-            //+  xhr.response + " ";       
-            //getmessage(xhr.response);
-            //}   
+            xhr.send(value);   
+            originalid++; 
+         } 
             
          <!-- Ontvang input van server (eigen bericht en id) --> 
          <!-- & Stuur input server naar output scherm -->

@@ -25,5 +25,13 @@ Donderdagochtend kreeg ik meer inzicht in de problemen met de beoogde POST/PUT f
 Het lukte gedurende de dag om via een POST functie de chat message naar een textfile te sturen en die op zijn beurt op het scherm te laten zien. 
 Later werd het ook mogelijk om de chat na een nieuwe bericht weer te refreshen. Op donderdag had ik voor vrijdag als planning om de chat aplicatie 
 en de PHP API aan te passen aan het REST protocol, het mogelijk te maken om aan de hand van een meegeprinte id in de tekstfile om berichten vanaf
-een bepaald nummer op te roepen,om het eigen swagger API document te voltooien & een online demo om een site te zetten .
+een bepaald nummer op te roepen,om het eigen swagger API document te voltooien & een online demo om een site te zetten.
+
+Vrijdag lijken de voornemens van donderdag geslaagd, met uitzondering van een haperende online versie die de css file niet oppikt, 
+een goed werkende ingebouwde idminimum functie & een API die er in slaagt zich naar het algemene protocol te voegen. Ik heb het derde deel van de opdracht, 
+de database toepassing niet kunnen voltooien, mede doordat ik pas donderdagmiddag met de database werd geintroduceerd en het naar mijn idee te kort tijd was 
+om deze te integreren. De overige delen en doelen voor de opdracht zijn naar mijn idee goed uitgevoerd. Het helder krijgen van de opdracht duurde relatief lang tot en met dinsdagmiddag.
+Dit had wellicht eerder opgehelderd kunnen worden door de opdracht slides beter te bekijken.
+
+
 

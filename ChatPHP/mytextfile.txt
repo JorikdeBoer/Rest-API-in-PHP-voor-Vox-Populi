@@ -1,12 +1,24 @@
-The username = STARTBERICHT
-The message = Het eerste bericht van de chat!
+Id = 1
+The chatname = voxpopuli
+The message = Jorik: bericht I
             
 
-The username = Jan
-The message = Hello there!
+
+Id = 2
+The chatname = voxpopuli
+The message = Jorik: bericht II
             
 
-The username = Joris
-The message = Ook hallo vanaf hier
+
+Id = 3
+The chatname = voxpopuli
+The message = Jorik: bericht III
             
+
+
+Id = 1
+The chatname = voxpopuli
+The message = Jorik: bericht IV
+            
+
 
